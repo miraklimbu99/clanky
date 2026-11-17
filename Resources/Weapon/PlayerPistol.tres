@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bictddxt45tke"]
+
+[ext_resource type="PackedScene" uid="uid://dvlpsw1o22a8o" path="res://Scenes/Projectile/PlayerBullet.tscn" id="1_aiwvp"]
+[ext_resource type="Script" uid="uid://nx8d6l5qoqfy" path="res://Scripts/Weapon/WeaponData.cs" id="1_mh0cn"]
+
+[resource]
+script = ExtResource("1_mh0cn")
+FireRate = 0.1
+ProjectileScene = ExtResource("1_aiwvp")
+metadata/_custom_type_script = "uid://nx8d6l5qoqfy"

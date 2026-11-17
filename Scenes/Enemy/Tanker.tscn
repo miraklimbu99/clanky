@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c114d8fnwgy4c"]
+
+[ext_resource type="PackedScene" uid="uid://cm7s4nf4dvwnc" path="res://Scenes/Enemy/EnemyTemplate.tscn" id="1_27jbq"]
+[ext_resource type="Resource" uid="uid://c1k737sibq5jy" path="res://Resources/Enemy/Tanker.tres" id="2_5fdyn"]
+[ext_resource type="Texture2D" uid="uid://blxh0x3t4u6pj" path="res://Assets/Enemy/Tanker/Tanker.png" id="3_5anyk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1ia3"]
+size = Vector2(60, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5anyk"]
+size = Vector2(56, 31)
+
+[node name="Tanker" unique_id=179607067 instance=ExtResource("1_27jbq")]
+data = ExtResource("2_5fdyn")
+
+[node name="CollisionShape2D" parent="Components/Hurtbox" parent_id_path=PackedInt32Array(1414037754) index="0" unique_id=1415731746]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_o1ia3")
+
+[node name="CollisionShape2D" parent="Components/Hitbox" parent_id_path=PackedInt32Array(332213956) index="0" unique_id=728825767]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_5anyk")
+
+[node name="Sprite" parent="." index="3" unique_id=1357256486]
+texture = ExtResource("3_5anyk")

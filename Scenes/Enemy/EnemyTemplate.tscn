@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cm7s4nf4dvwnc"]
+
+[ext_resource type="Script" uid="uid://bsryalp0vvrsi" path="res://Scripts/Enemy/Enemy.cs" id="1_ce1s6"]
+[ext_resource type="PackedScene" uid="uid://cccebxnlo7tc8" path="res://Scenes/Component/Hitbox.tscn" id="2_qt35l"]
+[ext_resource type="PackedScene" uid="uid://bdhgwibihmod8" path="res://Scenes/Component/Health.tscn" id="3_kp30u"]
+[ext_resource type="PackedScene" uid="uid://dgp8h1a3oenc5" path="res://Scenes/Component/Hurtbox.tscn" id="4_kp30u"]
+[ext_resource type="PackedScene" uid="uid://dugrf0hj580p5" path="res://Scenes/Component/Movement.tscn" id="5_h7r74"]
+[ext_resource type="PackedScene" uid="uid://ccfpv1bin5e5a" path="res://Scenes/Component/Sprite.tscn" id="6_7yn2m"]
+[ext_resource type="PackedScene" uid="uid://c74rccpanlbtt" path="res://Scenes/Component/Particle.tscn" id="7_6f1tj"]
+[ext_resource type="PackedScene" uid="uid://bebuuj6f1xqps" path="res://Scenes/Component/Audio.tscn" id="8_24g05"]
+[ext_resource type="AudioStream" uid="uid://cmj6wisjqjjkl" path="res://Assets/Enemy/Hurt.wav" id="8_upeva"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp30u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctkf2"]
+
+[node name="EnemyTemplate" type="CharacterBody2D" unique_id=179607067 node_paths=PackedStringArray("movement", "health", "hurtbox", "hitbox", "sprite", "particle", "audio")]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_ce1s6")
+movement = NodePath("Components/Movement")
+health = NodePath("Components/Health")
+hurtbox = NodePath("Components/Hurtbox")
+hitbox = NodePath("Components/Hitbox")
+sprite = NodePath("Components/Sprite")
+particle = NodePath("Components/Particle")
+audio = NodePath("Components/Audio")
+
+[node name="Components" type="Node2D" parent="." unique_id=759021976]
+
+[node name="Movement" parent="Components" unique_id=370111516 instance=ExtResource("5_h7r74")]
+
+[node name="Health" parent="Components" unique_id=940250104 instance=ExtResource("3_kp30u")]
+
+[node name="Hurtbox" parent="Components" unique_id=1414037754 instance=ExtResource("4_kp30u")]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Hurtbox" unique_id=1415731746]
+shape = SubResource("RectangleShape2D_kp30u")
+
+[node name="Hitbox" parent="Components" unique_id=332213956 instance=ExtResource("2_qt35l")]
+collision_layer = 64
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Hitbox" unique_id=728825767]
+shape = SubResource("RectangleShape2D_kp30u")
+
+[node name="Sprite" parent="Components" unique_id=423870635 instance=ExtResource("6_7yn2m")]
+
+[node name="Particle" parent="Components" unique_id=1668900482 instance=ExtResource("7_6f1tj")]
+
+[node name="Audio" parent="Components" unique_id=1375122536 instance=ExtResource("8_24g05")]
+
+[node name="HurtParticles" type="CPUParticles2D" parent="." unique_id=995499996]
+emitting = false
+amount = 1
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+scale_amount_min = 15.0
+scale_amount_max = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=888529813]
+shape = SubResource("RectangleShape2D_ctkf2")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1357256486]
+
+[node name="HealthLabel" type="Label" parent="." unique_id=94926540]
+offset_left = -20.0
+offset_top = -35.0
+offset_right = 20.0
+offset_bottom = -12.0
+
+[node name="HurtAudio" type="AudioStreamPlayer2D" parent="." unique_id=2076163305]
+stream = ExtResource("8_upeva")
+volume_db = 2.0

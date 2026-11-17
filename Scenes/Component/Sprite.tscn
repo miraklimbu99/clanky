@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ccfpv1bin5e5a"]
+
+[ext_resource type="Script" uid="uid://c1kp51c6xa1cc" path="res://Scripts/Component/Sprite.cs" id="1_ojtp4"]
+
+[node name="Sprite" type="Node2D" unique_id=423870635]
+script = ExtResource("1_ojtp4")

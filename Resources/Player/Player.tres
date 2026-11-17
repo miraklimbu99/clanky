@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlayerData" format=3 uid="uid://cvxlv0je02vr4"]
+
+[ext_resource type="PackedScene" uid="uid://b3fyfwuqih0oy" path="res://Scenes/Weapon/PlayerPistol.tscn" id="1_7pl5l"]
+[ext_resource type="Script" uid="uid://ckl20c0qjplxx" path="res://Scripts/Player/PlayerData.cs" id="1_iwrd7"]
+[ext_resource type="AudioStream" uid="uid://b5v6j8tglmufo" path="res://Assets/Player/Dash.wav" id="1_tsmih"]
+[ext_resource type="PackedScene" uid="uid://cgbqd2xojnyhf" path="res://Scenes/Player/PlayerGhost.tscn" id="2_8fojt"]
+[ext_resource type="PackedScene" uid="uid://dbrnvw2x8yd7b" path="res://Scenes/Weapon/Shotgun.tscn" id="2_55p5c"]
+[ext_resource type="AudioStream" uid="uid://dijc4ysc8venc" path="res://Assets/Player/Hurt.wav" id="2_h78vp"]
+
+[resource]
+script = ExtResource("1_iwrd7")
+Health = 500
+WalkSpeed = 300.0
+DashSpeed = 900.0
+PistolScene = ExtResource("1_7pl5l")
+ShotgunScene = ExtResource("2_55p5c")
+PlayerGhostScene = ExtResource("2_8fojt")
+HurtAudio = ExtResource("2_h78vp")
+DashAudio = ExtResource("1_tsmih")
+metadata/_custom_type_script = "uid://ckl20c0qjplxx"

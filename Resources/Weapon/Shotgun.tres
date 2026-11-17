@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dkyrddgesb1au"]
+
+[ext_resource type="PackedScene" uid="uid://dvlpsw1o22a8o" path="res://Scenes/Projectile/PlayerBullet.tscn" id="1_bfw26"]
+[ext_resource type="Script" uid="uid://nx8d6l5qoqfy" path="res://Scripts/Weapon/WeaponData.cs" id="4_6kt26"]
+
+[resource]
+script = ExtResource("4_6kt26")
+PelletCount = 7
+SpreadDegrees = 30.0
+ProjectileScene = ExtResource("1_bfw26")
+metadata/_custom_type_script = "uid://nx8d6l5qoqfy"

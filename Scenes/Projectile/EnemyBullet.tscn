@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cuj0s34wr4hsa"]
+
+[ext_resource type="Script" uid="uid://djwlug0nwvjrr" path="res://Scripts/Projectile/Projectile.cs" id="1_50mr2"]
+[ext_resource type="Resource" uid="uid://d4jtrbksrhqwn" path="res://Resources/Projectile/EnemyBullet.tres" id="2_50mr2"]
+[ext_resource type="Texture2D" uid="uid://cxtvcs0g0y7u8" path="res://Assets/Projectile/Enemybullet.png" id="2_o4o6w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yroo8"]
+size = Vector2(16, 24)
+
+[node name="EnemyBullet" type="Area2D" unique_id=1766376509]
+collision_layer = 64
+collision_mask = 4
+script = ExtResource("1_50mr2")
+Data = ExtResource("2_50mr2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1831581205]
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_yroo8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1490783675]
+texture = ExtResource("2_o4o6w")

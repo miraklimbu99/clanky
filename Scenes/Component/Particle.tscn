@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c74rccpanlbtt"]
+
+[ext_resource type="Script" uid="uid://dn3810lf02ohh" path="res://Scripts/Component/Particle.cs" id="1_nxsb4"]
+
+[node name="Particle" type="Node2D" unique_id=1668900482]
+script = ExtResource("1_nxsb4")

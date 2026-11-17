@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b3fyfwuqih0oy"]
+
+[ext_resource type="PackedScene" uid="uid://bkyrafcitm3h" path="res://Scenes/Weapon/WeaponTemplate.tscn" id="1_4te33"]
+[ext_resource type="Resource" uid="uid://bictddxt45tke" path="res://Resources/Weapon/PlayerPistol.tres" id="2_3sl7c"]
+[ext_resource type="Texture2D" uid="uid://u7jvhmiudopb" path="res://Assets/Weapon/PlayerPistol/PlayerPistol.png" id="3_ry0w6"]
+[ext_resource type="AudioStream" uid="uid://dc1neyass322h" path="res://Assets/Weapon/PlayerPistol/Pistol.wav" id="4_i6dss"]
+
+[node name="PlayerPistol" unique_id=239698834 instance=ExtResource("1_4te33")]
+Data = ExtResource("2_3sl7c")
+
+[node name="Sprite" parent="." index="1" unique_id=1103744992]
+texture = ExtResource("3_ry0w6")
+
+[node name="Muzzle" parent="." index="2" unique_id=1925727954]
+position = Vector2(15, -7)
+
+[node name="ShootParticles" parent="." index="4" unique_id=1989188006]
+position = Vector2(15, -7)
+
+[node name="ShootAudio" parent="." index="5" unique_id=891097387]
+stream = ExtResource("4_i6dss")
+volume_db = -5.0

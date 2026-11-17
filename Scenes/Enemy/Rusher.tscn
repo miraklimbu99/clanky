@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://divn7y4x3jml6"]
+
+[ext_resource type="PackedScene" uid="uid://cm7s4nf4dvwnc" path="res://Scenes/Enemy/EnemyTemplate.tscn" id="1_2x7km"]
+[ext_resource type="Resource" uid="uid://cjfvbtkjaweur" path="res://Resources/Enemy/Rusher.tres" id="2_5b4c2"]
+[ext_resource type="Script" uid="uid://km8mv5buyc8w" path="res://Scripts/Enemy/Rusher.cs" id="2_n2ku5"]
+[ext_resource type="Texture2D" uid="uid://mrgvkordya0o" path="res://Assets/Enemy/Rusher/Rusher.png" id="3_5b4c2"]
+[ext_resource type="PackedScene" uid="uid://ldkc40mnk645" path="res://Scenes/Component/Dash.tscn" id="3_n2ku5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ku5"]
+size = Vector2(26, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5b4c2"]
+size = Vector2(22, 33)
+
+[node name="Rusher" unique_id=179607067 node_paths=PackedStringArray("dash") instance=ExtResource("1_2x7km")]
+script = ExtResource("2_n2ku5")
+dash = NodePath("Components/Dash")
+data = ExtResource("2_5b4c2")
+
+[node name="CollisionShape2D" parent="Components/Hurtbox" parent_id_path=PackedInt32Array(1414037754) index="0" unique_id=1415731746]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_n2ku5")
+
+[node name="CollisionShape2D" parent="Components/Hitbox" parent_id_path=PackedInt32Array(332213956) index="0" unique_id=728825767]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_5b4c2")
+
+[node name="Dash" parent="Components" parent_id_path=PackedInt32Array(759021976) index="5" unique_id=2072819558 instance=ExtResource("3_n2ku5")]
+
+[node name="Sprite" parent="." index="3" unique_id=1357256486]
+texture = ExtResource("3_5b4c2")
+
+[node name="DashCooldown" type="Timer" parent="." index="5" unique_id=2079087419]

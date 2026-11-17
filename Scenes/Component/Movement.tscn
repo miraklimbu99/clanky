@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dugrf0hj580p5"]
+
+[ext_resource type="Script" uid="uid://bx5tolhjf47w6" path="res://Scripts/Component/Movement.cs" id="1_plsad"]
+
+[node name="Movement" type="Node2D" unique_id=2026721645]
+script = ExtResource("1_plsad")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bm6ndhxmv5g68"]
+
+[ext_resource type="Script" uid="uid://dsqtv11nmygc6" path="res://Scripts/WaveManager.cs" id="1_wst26"]
+
+[node name="WaveManager" type="Node" unique_id=2781008]
+script = ExtResource("1_wst26")
+
+[node name="IntermissionTimer" type="Timer" parent="." unique_id=1301063340]
+wait_time = 3.0
+one_shot = true

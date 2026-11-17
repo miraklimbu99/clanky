@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bkyrafcitm3h"]
+
+[ext_resource type="Script" uid="uid://c7whm6y6b6b7v" path="res://Scripts/Weapon/Weapon.cs" id="1_0prki"]
+[ext_resource type="PackedScene" uid="uid://bebuuj6f1xqps" path="res://Scenes/Component/Audio.tscn" id="2_8n641"]
+[ext_resource type="PackedScene" uid="uid://c74rccpanlbtt" path="res://Scenes/Component/Particle.tscn" id="3_hra8u"]
+
+[node name="WeaponTemplate" type="Node2D" unique_id=239698834 node_paths=PackedStringArray("audio", "particle")]
+script = ExtResource("1_0prki")
+audio = NodePath("Components/Audio")
+particle = NodePath("Components/Particle")
+
+[node name="Components" type="Node2D" parent="." unique_id=26221430]
+
+[node name="Audio" parent="Components" unique_id=1375122536 instance=ExtResource("2_8n641")]
+
+[node name="Particle" parent="Components" unique_id=1668900482 instance=ExtResource("3_hra8u")]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1103744992]
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1925727954]
+
+[node name="FireRateTimer" type="Timer" parent="." unique_id=162315451]
+
+[node name="ShootParticles" type="CPUParticles2D" parent="." unique_id=1989188006]
+emitting = false
+amount = 4
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+scale_amount_min = 4.0
+scale_amount_max = 5.0
+color = Color(1, 0.83137256, 0.3529412, 1)
+
+[node name="ShootAudio" type="AudioStreamPlayer2D" parent="." unique_id=891097387]

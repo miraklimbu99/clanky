@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ProjectileData" format=3 uid="uid://ce1ftiwqnaous"]
+
+[ext_resource type="Script" uid="uid://bhudypm7kgl8r" path="res://Scripts/Projectile/ProjectileData.cs" id="1_7lely"]
+
+[resource]
+script = ExtResource("1_7lely")
+Speed = 600.0
+Damage = 20
+Lifetime = 2.0
+metadata/_custom_type_script = "uid://bhudypm7kgl8r"

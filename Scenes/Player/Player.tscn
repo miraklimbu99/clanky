@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://chkj570nc4k6s"]
+
+[ext_resource type="Script" uid="uid://c2p41ptn1bv81" path="res://Scripts/Player/Player.cs" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://ckl20c0qjplxx" path="res://Scripts/Player/PlayerData.cs" id="2_0u84n"]
+[ext_resource type="Texture2D" uid="uid://yogtmiq0pjx4" path="res://Assets/Player/clanky.png" id="4_ddoul"]
+[ext_resource type="PackedScene" uid="uid://dugrf0hj580p5" path="res://Scenes/Component/Movement.tscn" id="5_4wape"]
+[ext_resource type="PackedScene" uid="uid://bdhgwibihmod8" path="res://Scenes/Component/Health.tscn" id="6_4wape"]
+[ext_resource type="PackedScene" uid="uid://ldkc40mnk645" path="res://Scenes/Component/Dash.tscn" id="6_fk5o5"]
+[ext_resource type="PackedScene" uid="uid://dgp8h1a3oenc5" path="res://Scenes/Component/Hurtbox.tscn" id="6_t26db"]
+[ext_resource type="PackedScene" uid="uid://cyrqtktlm4c3n" path="res://Scenes/Component/WeaponManager.tscn" id="7_fk5o5"]
+[ext_resource type="PackedScene" uid="uid://b3fyfwuqih0oy" path="res://Scenes/Weapon/PlayerPistol.tscn" id="8_825xp"]
+[ext_resource type="PackedScene" uid="uid://dbrnvw2x8yd7b" path="res://Scenes/Weapon/Shotgun.tscn" id="9_ji083"]
+[ext_resource type="PackedScene" uid="uid://ccfpv1bin5e5a" path="res://Scenes/Component/Sprite.tscn" id="10_0kmp4"]
+[ext_resource type="PackedScene" uid="uid://bebuuj6f1xqps" path="res://Scenes/Component/Audio.tscn" id="11_i5acl"]
+[ext_resource type="PackedScene" uid="uid://c74rccpanlbtt" path="res://Scenes/Component/Particle.tscn" id="12_6tu5v"]
+[ext_resource type="AudioStream" uid="uid://b5v6j8tglmufo" path="res://Assets/Player/Dash.wav" id="12_epg6k"]
+[ext_resource type="AudioStream" uid="uid://dijc4ysc8venc" path="res://Assets/Player/Hurt.wav" id="13_0u84n"]
+[ext_resource type="Script" uid="uid://km5uj681lsug" path="res://Scenes/Player/Camera.cs" id="15_esmjy"]
+
+[sub_resource type="Resource" id="Resource_0u84n"]
+script = ExtResource("2_0u84n")
+metadata/_custom_type_script = "uid://ckl20c0qjplxx"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wape"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3lat"]
+
+[node name="Player" type="CharacterBody2D" unique_id=507488299 node_paths=PackedStringArray("movement", "health", "hurtbox", "dash", "weaponManager", "sprite", "audio", "particle", "dashAudio", "hurtAudio") groups=["Player"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_4flbx")
+data = SubResource("Resource_0u84n")
+movement = NodePath("Components/Movement")
+health = NodePath("Components/Health")
+hurtbox = NodePath("Components/Hurtbox")
+dash = NodePath("Components/Dash")
+weaponManager = NodePath("Components/WeaponManager")
+sprite = NodePath("Components/Sprite")
+audio = NodePath("Components/Audio")
+particle = NodePath("Components/Particle")
+dashAudio = NodePath("Audio/DashAudio")
+hurtAudio = NodePath("Audio/HurtAudio")
+
+[node name="Components" type="Node2D" parent="." unique_id=109546578]
+
+[node name="Movement" parent="Components" unique_id=370111516 instance=ExtResource("5_4wape")]
+
+[node name="Health" parent="Components" unique_id=940250104 instance=ExtResource("6_4wape")]
+
+[node name="Hurtbox" parent="Components" unique_id=1414037754 instance=ExtResource("6_t26db")]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Hurtbox" unique_id=1846528339]
+shape = SubResource("RectangleShape2D_4wape")
+
+[node name="Dash" parent="Components" unique_id=2007115099 instance=ExtResource("6_fk5o5")]
+
+[node name="WeaponManager" parent="Components" unique_id=1419595647 instance=ExtResource("7_fk5o5")]
+pistolScene = ExtResource("8_825xp")
+shotgunScene = ExtResource("9_ji083")
+
+[node name="Audio" parent="Components" unique_id=1375122536 instance=ExtResource("11_i5acl")]
+
+[node name="Sprite" parent="Components" unique_id=423870635 instance=ExtResource("10_0kmp4")]
+
+[node name="Particle" parent="Components" unique_id=1668900482 instance=ExtResource("12_6tu5v")]
+
+[node name="Audio" type="Node2D" parent="." unique_id=491800275]
+
+[node name="DashAudio" type="AudioStreamPlayer2D" parent="Audio" unique_id=373851926]
+stream = ExtResource("12_epg6k")
+volume_db = 1.0
+
+[node name="HurtAudio" type="AudioStreamPlayer2D" parent="Audio" unique_id=384627087]
+stream = ExtResource("13_0u84n")
+volume_db = -5.0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=69991764]
+texture = ExtResource("4_ddoul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=686387417]
+shape = SubResource("RectangleShape2D_q3lat")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=501559098]
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+script = ExtResource("15_esmjy")
+
+[node name="HurtParticles" type="CPUParticles2D" parent="." unique_id=128850116]
+emitting = false
+amount = 4
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+scale_amount_min = 15.0
+scale_amount_max = 20.0

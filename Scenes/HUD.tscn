@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dne3ks7vw8ct"]
+
+[ext_resource type="Script" uid="uid://q1cuou6et7uy" path="res://Scripts/HUD.cs" id="1_k5de2"]
+
+[node name="HUD" type="CanvasLayer" unique_id=713118808]
+script = ExtResource("1_k5de2")
+
+[node name="Control" type="Control" parent="." unique_id=2013042194]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+
+[node name="HealthLabel" type="Label" parent="Control" unique_id=965102543]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Health: 100"
+
+[node name="WeaponLabel" type="Label" parent="Control" unique_id=1959146671]
+layout_mode = 0
+offset_top = 25.0
+offset_right = 40.0
+offset_bottom = 48.0
+text = "Weapon: Pistol"
+
+[node name="IntermissionLabel" type="Label" parent="Control" unique_id=458604348]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 51.5
+offset_right = 41.0
+offset_bottom = 74.5
+text = "Wave starts in: 3"
+
+[node name="StatusLabel" type="Label" parent="Control" unique_id=992375531]
+layout_mode = 0
+offset_left = 239.5
+offset_top = 6.0
+offset_right = 337.5
+offset_bottom = 29.0
+text = "Intermission"
+
+[node name="EnemiesAliveLabel" type="Label" parent="Control" unique_id=1946577570]
+layout_mode = 0
+offset_top = 76.0
+offset_right = 125.0
+offset_bottom = 99.0
+text = "Enemies Alive: 0"
+
+[node name="WaveLabel" type="Label" parent="Control" unique_id=1433901306]
+layout_mode = 0
+offset_left = 498.5
+offset_top = 6.0
+offset_right = 564.5
+offset_bottom = 29.0
+text = "Wave #1"
+
+[node name="HurtFlash" type="ColorRect" parent="." unique_id=824270144]
+offset_right = 1229.0
+offset_bottom = 715.0
+color = Color(1, 1, 1, 0)

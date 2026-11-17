@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cgbqd2xojnyhf"]
+
+[ext_resource type="Texture2D" uid="uid://yogtmiq0pjx4" path="res://Assets/Player/clanky.png" id="1_pd8tq"]
+[ext_resource type="Script" uid="uid://djr3wovxl0l5" path="res://Scripts/Player/PlayerGhost.cs" id="2_n00eb"]
+
+[node name="PlayerGhost" type="Sprite2D" unique_id=1654633808]
+modulate = Color(1, 1, 1, 0.50980395)
+texture = ExtResource("1_pd8tq")
+script = ExtResource("2_n00eb")
+
+[node name="Timer" type="Timer" parent="." unique_id=646286880]
+wait_time = 0.2
+autostart = true

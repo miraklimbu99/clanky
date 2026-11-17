@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dlsddbdptaoe2"]
+
+[ext_resource type="PackedScene" uid="uid://bkyrafcitm3h" path="res://Scenes/Weapon/WeaponTemplate.tscn" id="1_2esip"]
+[ext_resource type="Texture2D" uid="uid://bnbrwajy0n1u1" path="res://Assets/Weapon/EnemyPistol/EnemyPistol.png" id="2_wn5vs"]
+[ext_resource type="PackedScene" uid="uid://cuj0s34wr4hsa" path="res://Scenes/Projectile/EnemyBullet.tscn" id="2_y7ikv"]
+[ext_resource type="Script" uid="uid://nx8d6l5qoqfy" path="res://Scripts/Weapon/WeaponData.cs" id="3_2gh3c"]
+[ext_resource type="AudioStream" uid="uid://dc1neyass322h" path="res://Assets/Weapon/PlayerPistol/Pistol.wav" id="4_7w1pv"]
+
+[sub_resource type="Resource" id="Resource_c14qs"]
+script = ExtResource("3_2gh3c")
+ProjectileScene = ExtResource("2_y7ikv")
+metadata/_custom_type_script = "uid://nx8d6l5qoqfy"
+
+[node name="EnemyPistol" unique_id=239698834 instance=ExtResource("1_2esip")]
+Data = SubResource("Resource_c14qs")
+
+[node name="Sprite" parent="." index="1" unique_id=1103744992]
+texture = ExtResource("2_wn5vs")
+
+[node name="Muzzle" parent="." index="2" unique_id=1925727954]
+position = Vector2(15, -7)
+
+[node name="ShootParticles" parent="." index="4" unique_id=1989188006]
+position = Vector2(15, -7)
+color = Color(0.951866, 0, 0.12810752, 1)
+
+[node name="ShootAudio" parent="." index="5" unique_id=891097387]
+stream = ExtResource("4_7w1pv")
+volume_db = -10.0
