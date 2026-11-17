@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c114d8fnwgy4c" path="res://Scenes/Enemy/Tanker.tscn" id="4_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://dbee1mbj7dgya" path="res://Scenes/Enemy/Shooter.tscn" id="5_0fj1v"]
 [ext_resource type="PackedScene" uid="uid://dne3ks7vw8ct" path="res://Scenes/HUD.tscn" id="6_lo5ox"]
+[ext_resource type="PackedScene" uid="uid://c5j4l80jhcsx5" path="res://Scenes/WorldPistol.tscn" id="8_k7acu"]
 [ext_resource type="Texture2D" uid="uid://cjmq1j7da4bv4" path="res://Assets/World/Floor.png" id="8_lo5ox"]
+[ext_resource type="PackedScene" uid="uid://b18jag1ui5c0g" path="res://Scenes/WorldShotgun.tscn" id="9_5v1tr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yf0ba"]
 texture = ExtResource("8_lo5ox")
@@ -63,3 +65,12 @@ position = Vector2(2048, 192)
 
 [node name="Player" parent="." unique_id=507488299 node_paths=PackedStringArray("hud") instance=ExtResource("1_bkhv4")]
 hud = NodePath("../HUD")
+
+[node name="WorldShotgun" parent="." unique_id=39043405 instance=ExtResource("9_5v1tr")]
+position = Vector2(229, 217)
+
+[node name="WorldPistol" parent="." unique_id=1710104039 instance=ExtResource("8_k7acu")]
+position = Vector2(273, -74)
+
+[node name="WorldPistol2" parent="." unique_id=2027158658 instance=ExtResource("8_k7acu")]
+position = Vector2(328, 93)

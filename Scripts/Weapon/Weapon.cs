@@ -69,4 +69,16 @@ public partial class Weapon : Node2D
 
 		GetTree().CurrentScene.AddChild(projectile);
 	}
+
+	public void Equip()
+	{
+		Visible = true;
+		ProcessMode = ProcessModeEnum.Inherit;
+	}
+
+	public void UnEquip()
+	{
+		Visible = false;
+		ProcessMode = ProcessModeEnum.Disabled;
+	}
 }

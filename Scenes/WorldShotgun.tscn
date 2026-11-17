@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b18jag1ui5c0g"]
+
+[ext_resource type="PackedScene" uid="uid://bpfaxlrs1pxcx" path="res://Scenes/WorldWeaponTemplate.tscn" id="1_cvs4y"]
+[ext_resource type="Texture2D" uid="uid://2anoxtws5muy" path="res://Assets/Weapon/Shotgun/Shotgun.png" id="2_r8u4l"]
+
+[node name="WorldShotgun" unique_id=1710104039 instance=ExtResource("1_cvs4y")]
+texture = ExtResource("2_r8u4l")
+
+[node name="Pickup" parent="." index="0" unique_id=877573699]
+type = 1

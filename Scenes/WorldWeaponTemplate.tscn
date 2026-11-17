@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bpfaxlrs1pxcx"]
+
+[ext_resource type="Script" uid="uid://bwausvbhv7epm" path="res://Scripts/WorldWeaponTemplate.cs" id="1_dxgnu"]
+[ext_resource type="PackedScene" uid="uid://dnhw8nt47atnl" path="res://Scenes/Component/Pickup.tscn" id="1_ujic0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxgnu"]
+
+[node name="WorldWeaponTemplate" type="Sprite2D" unique_id=1710104039]
+script = ExtResource("1_dxgnu")
+
+[node name="Pickup" parent="." unique_id=877573699 instance=ExtResource("1_ujic0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup" unique_id=1216381705]
+shape = SubResource("RectangleShape2D_dxgnu")

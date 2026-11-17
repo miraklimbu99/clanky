@@ -10,7 +10,7 @@ public partial class Player : CharacterBody2D
 	[Export] private Health health;
 	[Export] private Hurtbox hurtbox;
 	[Export] private Dash dash;
-	[Export] private WeaponManager weaponManager;
+	[Export] public WeaponManager WeaponManager;
 	[Export] private Sprite sprite;
 	[Export] private Audio audio;
 	[Export] private Particle particle;
@@ -48,11 +48,14 @@ public partial class Player : CharacterBody2D
 		dash.Initialize(0.3f);
 
 		sprite.Initialize(GetNode<Sprite2D>("Sprite"));
+
 		hud.UpdateHealthLabel(data.Health);
 
 		camera = GetNode<Camera>("Camera2D");
 
 		hurtParticles = GetNode<CpuParticles2D>("HurtParticles");
+
+		WeaponManager.AddWeapon(WeaponType.Pistol);
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -77,10 +80,8 @@ public partial class Player : CharacterBody2D
 	public override void _Process(double delta)
 	{
 		if (Input.IsActionJustPressed("switch_weapon"))
-			weaponManager.SwitchWeapon();
-
-		Vector2 direction = (GetGlobalMousePosition() - Position).Normalized();
-		weaponManager.currentWeapon.GlobalPosition = Position + direction * 15.0f;
-		weaponManager.currentWeapon.LookAt(GetGlobalMousePosition());
+		{
+			WeaponManager.SwitchWeapon();
+		}
 	}
 }

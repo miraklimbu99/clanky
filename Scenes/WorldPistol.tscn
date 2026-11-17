@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c5j4l80jhcsx5"]
+
+[ext_resource type="PackedScene" uid="uid://bpfaxlrs1pxcx" path="res://Scenes/WorldWeaponTemplate.tscn" id="1_o6bfi"]
+[ext_resource type="Texture2D" uid="uid://u7jvhmiudopb" path="res://Assets/Weapon/PlayerPistol/PlayerPistol.png" id="2_usv5e"]
+
+[node name="WorldPistol" unique_id=1710104039 instance=ExtResource("1_o6bfi")]
+texture = ExtResource("2_usv5e")

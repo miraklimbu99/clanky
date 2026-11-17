@@ -25,7 +25,7 @@ metadata/_custom_type_script = "uid://ckl20c0qjplxx"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3lat"]
 
-[node name="Player" type="CharacterBody2D" unique_id=507488299 node_paths=PackedStringArray("movement", "health", "hurtbox", "dash", "weaponManager", "sprite", "audio", "particle", "dashAudio", "hurtAudio") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=507488299 node_paths=PackedStringArray("movement", "health", "hurtbox", "dash", "WeaponManager", "sprite", "audio", "particle", "dashAudio", "hurtAudio") groups=["Player"]]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_4flbx")
@@ -34,7 +34,7 @@ movement = NodePath("Components/Movement")
 health = NodePath("Components/Health")
 hurtbox = NodePath("Components/Hurtbox")
 dash = NodePath("Components/Dash")
-weaponManager = NodePath("Components/WeaponManager")
+WeaponManager = NodePath("Components/WeaponManager")
 sprite = NodePath("Components/Sprite")
 audio = NodePath("Components/Audio")
 particle = NodePath("Components/Particle")

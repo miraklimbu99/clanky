@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("4_6kt26")
+type = 1
 PelletCount = 7
 SpreadDegrees = 30.0
 ProjectileScene = ExtResource("1_bfw26")
